@@ -10,7 +10,7 @@ type FormData = {
 
 const usePollModel = () => {
   const ID = "POLL_ID";
-  const [result, setResult] = useState(window.localStorage.getItem(ID));
+  const [result, setResult] = useState(typeof window !== "undefined" ? window.localStorage.getItem(ID) : null);
 
   return [
     result,
